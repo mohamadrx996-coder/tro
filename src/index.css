@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-matrix-green: #00FF00;
+  --color-matrix-dark: #0A0A0A;
+  --color-matrix-gray: #1A1A1A;
+}
+
+@layer base {
+  body {
+    @apply bg-matrix-dark text-matrix-green font-mono selection:bg-matrix-green selection:text-matrix-dark;
+  }
+}
+
+.matrix-border {
+  @apply border border-matrix-green/30 hover:border-matrix-green transition-colors;
+}
+
+.matrix-button {
+  @apply bg-transparent border border-matrix-green text-matrix-green px-4 py-2 hover:bg-matrix-green hover:text-matrix-dark transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-widest text-xs font-bold;
+}
+
+.matrix-input {
+  @apply bg-matrix-gray border border-matrix-green/30 text-matrix-green px-4 py-2 focus:border-matrix-green outline-none transition-all;
+}
+
+.matrix-card {
+  @apply bg-matrix-gray/50 border border-matrix-green/20 p-6 backdrop-blur-sm;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-matrix-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-matrix-green/50 hover:bg-matrix-green;
+}
